@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gouvernorat index{% endblock %}
+
+{% block body %}
+    <h1>Gouvernorat index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for gouvernorat in gouvernorats %}
+            <tr>
+                <td>{{ gouvernorat.id }}</td>
+                <td>{{ gouvernorat.name }}</td>
+                <td>
+                    <a href="{{ path('gouvernorat_show', {'id': gouvernorat.id}) }}">show</a>
+                    <a href="{{ path('gouvernorat_edit', {'id': gouvernorat.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('gouvernorat_new') }}">Create new</a>
+{% endblock %}

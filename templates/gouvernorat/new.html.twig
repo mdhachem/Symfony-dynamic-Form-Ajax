@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Gouvernorat{% endblock %}
+
+{% block body %}
+    <h1>Create new Gouvernorat</h1>
+
+    {{ include('gouvernorat/_form.html.twig') }}
+
+    <a href="{{ path('gouvernorat_index') }}">back to list</a>
+{% endblock %}
